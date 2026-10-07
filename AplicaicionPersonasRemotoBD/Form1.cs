@@ -94,9 +94,9 @@ namespace AplicaicionPersonasRemotoBD
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             //valido que usuario llene los datos
-            if (TxtID.Text.Length > 0 && TxtNombre.Text.Length > 0 && TxtTelefono.Text.Length>0)
+            if (TxtID.Text.Length > 0 && TxtNombre.Text.Length > 0 && TxtTelefono.Text.Length > 0)
             {
-                if (ClaseFunciones.Func_Insertar(Convert.ToInt64 (TxtID.Text),TxtNombre.Text,TxtTelefono.Text))
+                if (ClaseFunciones.Func_Insertar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
                 {
                     MessageBox.Show("Persona Guardada", "Felicitaciones!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DataTable dt = new DataTable();
@@ -107,7 +107,7 @@ namespace AplicaicionPersonasRemotoBD
                 }
                 else
                 {
-                    MessageBox.Show("Hubo una Excepcion: "+ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hubo una Excepcion: " + ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -115,5 +115,36 @@ namespace AplicaicionPersonasRemotoBD
                 MessageBox.Show("Falta Ingresar Datos!!!", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            //capturo el id del datagrid
+            long ideliminar = Convert.ToInt64(DgvPersonas.CurrentRow.Cells["ID"].Value.ToString());
+            string name = DgvPersonas.CurrentRow.Cells["Nombre"].Value.ToString();
+            MessageBox.Show($"El nombre seleccionado es: {name}");
+            //pregunto si quiere eliminar
+            //creo un dialog result  
+            DialogResult Rpta = new DialogResult();
+            Rpta = MessageBox.Show("Desea Eliminar el ID: " +ideliminar, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (Rpta == DialogResult.OK)
+            {
+                if (ClaseFunciones.Func_Eliminar(ideliminar))
+                {
+                    MessageBox.Show("Persona Eliminada", "Felicitaciones!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataTable dt = new DataTable();
+                    dt = ClaseFunciones.Func_TraerDatos();
+                    //muestro el datatable en datagrid
+                    DgvPersonas.DataSource = dt;
+                    BtnCancelar_Click(sender, e);
+
+                }
+                else
+                {
+                    MessageBox.Show("Hubo una Excepcion: " + ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+        }
+         
     }
 }

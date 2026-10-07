@@ -48,55 +48,61 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(16, 17);
+            label1.Location = new Point(13, 14);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(30, 25);
+            label1.Size = new Size(24, 20);
             label1.TabIndex = 1;
             label1.Text = "ID";
             // 
             // TxtID
             // 
             TxtID.Enabled = false;
-            TxtID.Location = new Point(113, 11);
+            TxtID.Location = new Point(90, 9);
+            TxtID.Margin = new Padding(2, 2, 2, 2);
             TxtID.MaxLength = 19;
             TxtID.Name = "TxtID";
-            TxtID.Size = new Size(238, 31);
+            TxtID.Size = new Size(191, 27);
             TxtID.TabIndex = 2;
             TxtID.KeyPress += TxtID_KeyPress;
             // 
             // TxtNombre
             // 
             TxtNombre.Enabled = false;
-            TxtNombre.Location = new Point(113, 60);
+            TxtNombre.Location = new Point(90, 48);
+            TxtNombre.Margin = new Padding(2, 2, 2, 2);
             TxtNombre.MaxLength = 100;
             TxtNombre.Name = "TxtNombre";
-            TxtNombre.Size = new Size(362, 31);
+            TxtNombre.Size = new Size(290, 27);
             TxtNombre.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(16, 66);
+            label2.Location = new Point(13, 53);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(78, 25);
+            label2.Size = new Size(64, 20);
             label2.TabIndex = 3;
             label2.Text = "Nombre";
             // 
             // TxtTelefono
             // 
             TxtTelefono.Enabled = false;
-            TxtTelefono.Location = new Point(113, 121);
+            TxtTelefono.Location = new Point(90, 97);
+            TxtTelefono.Margin = new Padding(2, 2, 2, 2);
             TxtTelefono.MaxLength = 100;
             TxtTelefono.Name = "TxtTelefono";
-            TxtTelefono.Size = new Size(150, 31);
+            TxtTelefono.Size = new Size(121, 27);
             TxtTelefono.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(16, 127);
+            label3.Location = new Point(13, 102);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(79, 25);
+            label3.Size = new Size(67, 20);
             label3.TabIndex = 5;
             label3.Text = "Telefono";
             // 
@@ -104,9 +110,10 @@
             // 
             BtnNuevo.Image = (Image)resources.GetObject("BtnNuevo.Image");
             BtnNuevo.ImageAlign = ContentAlignment.TopCenter;
-            BtnNuevo.Location = new Point(30, 190);
+            BtnNuevo.Location = new Point(24, 152);
+            BtnNuevo.Margin = new Padding(2, 2, 2, 2);
             BtnNuevo.Name = "BtnNuevo";
-            BtnNuevo.Size = new Size(112, 87);
+            BtnNuevo.Size = new Size(90, 70);
             BtnNuevo.TabIndex = 7;
             BtnNuevo.Text = "Nuevo";
             BtnNuevo.TextAlign = ContentAlignment.BottomCenter;
@@ -118,9 +125,10 @@
             BtnGuardar.Enabled = false;
             BtnGuardar.Image = (Image)resources.GetObject("BtnGuardar.Image");
             BtnGuardar.ImageAlign = ContentAlignment.TopCenter;
-            BtnGuardar.Location = new Point(151, 190);
+            BtnGuardar.Location = new Point(121, 152);
+            BtnGuardar.Margin = new Padding(2, 2, 2, 2);
             BtnGuardar.Name = "BtnGuardar";
-            BtnGuardar.Size = new Size(112, 87);
+            BtnGuardar.Size = new Size(90, 70);
             BtnGuardar.TabIndex = 8;
             BtnGuardar.Text = "Guardar";
             BtnGuardar.TextAlign = ContentAlignment.BottomCenter;
@@ -132,9 +140,10 @@
             BtnCancelar.Enabled = false;
             BtnCancelar.Image = (Image)resources.GetObject("BtnCancelar.Image");
             BtnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            BtnCancelar.Location = new Point(269, 190);
+            BtnCancelar.Location = new Point(215, 152);
+            BtnCancelar.Margin = new Padding(2, 2, 2, 2);
             BtnCancelar.Name = "BtnCancelar";
-            BtnCancelar.Size = new Size(112, 87);
+            BtnCancelar.Size = new Size(90, 70);
             BtnCancelar.TabIndex = 9;
             BtnCancelar.Text = "Cancalar";
             BtnCancelar.TextAlign = ContentAlignment.BottomCenter;
@@ -145,9 +154,10 @@
             // 
             BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
             BtnSalir.ImageAlign = ContentAlignment.TopCenter;
-            BtnSalir.Location = new Point(634, 190);
+            BtnSalir.Location = new Point(507, 152);
+            BtnSalir.Margin = new Padding(2, 2, 2, 2);
             BtnSalir.Name = "BtnSalir";
-            BtnSalir.Size = new Size(112, 87);
+            BtnSalir.Size = new Size(90, 70);
             BtnSalir.TabIndex = 12;
             BtnSalir.Text = "Salir";
             BtnSalir.TextAlign = ContentAlignment.BottomCenter;
@@ -158,21 +168,24 @@
             // 
             BtnEliminar.Image = (Image)resources.GetObject("BtnEliminar.Image");
             BtnEliminar.ImageAlign = ContentAlignment.TopCenter;
-            BtnEliminar.Location = new Point(516, 190);
+            BtnEliminar.Location = new Point(413, 152);
+            BtnEliminar.Margin = new Padding(2, 2, 2, 2);
             BtnEliminar.Name = "BtnEliminar";
-            BtnEliminar.Size = new Size(112, 87);
+            BtnEliminar.Size = new Size(90, 70);
             BtnEliminar.TabIndex = 11;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.TextAlign = ContentAlignment.BottomCenter;
             BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnEditar
             // 
             BtnEditar.Image = (Image)resources.GetObject("BtnEditar.Image");
             BtnEditar.ImageAlign = ContentAlignment.TopCenter;
-            BtnEditar.Location = new Point(395, 190);
+            BtnEditar.Location = new Point(316, 152);
+            BtnEditar.Margin = new Padding(2, 2, 2, 2);
             BtnEditar.Name = "BtnEditar";
-            BtnEditar.Size = new Size(112, 87);
+            BtnEditar.Size = new Size(90, 70);
             BtnEditar.TabIndex = 10;
             BtnEditar.Text = "Editar";
             BtnEditar.TextAlign = ContentAlignment.BottomCenter;
@@ -183,18 +196,19 @@
             DgvPersonas.AllowUserToAddRows = false;
             DgvPersonas.AllowUserToDeleteRows = false;
             DgvPersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvPersonas.Location = new Point(30, 301);
+            DgvPersonas.Location = new Point(24, 241);
+            DgvPersonas.Margin = new Padding(2, 2, 2, 2);
             DgvPersonas.Name = "DgvPersonas";
             DgvPersonas.ReadOnly = true;
             DgvPersonas.RowHeadersWidth = 62;
-            DgvPersonas.Size = new Size(716, 225);
+            DgvPersonas.Size = new Size(573, 180);
             DgvPersonas.TabIndex = 13;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(762, 540);
+            ClientSize = new Size(610, 432);
             ControlBox = false;
             Controls.Add(DgvPersonas);
             Controls.Add(BtnSalir);
@@ -209,6 +223,7 @@
             Controls.Add(label2);
             Controls.Add(TxtID);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion Personas";
