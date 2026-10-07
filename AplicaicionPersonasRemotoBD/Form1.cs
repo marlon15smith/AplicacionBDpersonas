@@ -1,4 +1,5 @@
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 
 namespace AplicaicionPersonasRemotoBD
 {
@@ -96,26 +97,43 @@ namespace AplicaicionPersonasRemotoBD
             //valido que usuario llene los datos
             if (TxtID.Text.Length > 0 && TxtNombre.Text.Length > 0 && TxtTelefono.Text.Length > 0)
             {
-                if (ClaseFunciones.Func_Insertar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
+                //Inserta cuando el TextBox id esta habilitado.
+                if (TxtID.Enabled == true)
                 {
-                    MessageBox.Show("Persona Guardada", "Felicitaciones!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DataTable dt = new DataTable();
-                    dt = ClaseFunciones.Func_TraerDatos();
-                    //muestro el datatable en datagrid
-                    DgvPersonas.DataSource = dt;
-                    BtnCancelar_Click(sender, e);
+                    if (ClaseFunciones.Func_Insertar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
+                    {
+                        MessageBox.Show("Persona Guardada", "Felicitaciones!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataTable dt = new DataTable();
+                        dt = ClaseFunciones.Func_TraerDatos();
+                        //muestro el datatable en datagrid
+                        DgvPersonas.DataSource = dt;
+                        BtnCancelar_Click(sender, e);
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Hubo una Excepcion: " + ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+                //Editar
                 else
                 {
-                    MessageBox.Show("Hubo una Excepcion: " + ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (ClaseFunciones.Func_Editar(Convert.ToInt64(TxtID.Text), TxtNombre.Text, TxtTelefono.Text))
+                    {
+                        MessageBox.Show("Persona Editada", "Felicitaciones!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataTable dt = new DataTable();
+                        dt = ClaseFunciones.Func_TraerDatos();
+                        //muestro el datatable en datagrid
+                        DgvPersonas.DataSource = dt;
+                        BtnCancelar_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo una Excepcion: " + ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            else
-            {
-                MessageBox.Show("Falta Ingresar Datos!!!", "Error!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             //capturo el id del datagrid
@@ -125,7 +143,7 @@ namespace AplicaicionPersonasRemotoBD
             //pregunto si quiere eliminar
             //creo un dialog result  
             DialogResult Rpta = new DialogResult();
-            Rpta = MessageBox.Show("Desea Eliminar el ID: " +ideliminar, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            Rpta = MessageBox.Show("Desea Eliminar el ID: " + ideliminar, "Pregunta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (Rpta == DialogResult.OK)
             {
                 if (ClaseFunciones.Func_Eliminar(ideliminar))
@@ -143,8 +161,30 @@ namespace AplicaicionPersonasRemotoBD
                     MessageBox.Show("Hubo una Excepcion: " + ClaseFunciones.excepcion, "Excepcion!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
-         
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            //habilito los texbox
+            TxtID.Enabled = false;
+            TxtNombre.Enabled = true;
+            TxtTelefono.Enabled = true;
+            //capturar datos del datagridview.
+            TxtID.Text = DgvPersonas.CurrentRow.Cells["ID"].Value.ToString();
+            TxtNombre.Text = DgvPersonas.CurrentRow.Cells["Nombre"].Value.ToString();
+            TxtTelefono.Text = DgvPersonas.CurrentRow.Cells["Telefono"].Value.ToString();
+            //habilito el guarda y cancelar
+            BtnGuardar.Enabled = true;
+            BtnCancelar.Enabled = true;
+            //deshabilito los demas botones
+            BtnNuevo.Enabled = false;
+            BtnEditar.Enabled = false;
+            BtnEliminar.Enabled = false;
+            BtnSalir.Enabled = false;
+            //mando el foco al txtID
+            TxtNombre.Focus();
+        }
     }
+
 }

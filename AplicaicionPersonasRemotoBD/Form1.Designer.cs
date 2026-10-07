@@ -59,7 +59,7 @@
             // 
             TxtID.Enabled = false;
             TxtID.Location = new Point(90, 9);
-            TxtID.Margin = new Padding(2, 2, 2, 2);
+            TxtID.Margin = new Padding(2);
             TxtID.MaxLength = 19;
             TxtID.Name = "TxtID";
             TxtID.Size = new Size(191, 27);
@@ -70,7 +70,7 @@
             // 
             TxtNombre.Enabled = false;
             TxtNombre.Location = new Point(90, 48);
-            TxtNombre.Margin = new Padding(2, 2, 2, 2);
+            TxtNombre.Margin = new Padding(2);
             TxtNombre.MaxLength = 100;
             TxtNombre.Name = "TxtNombre";
             TxtNombre.Size = new Size(290, 27);
@@ -90,7 +90,7 @@
             // 
             TxtTelefono.Enabled = false;
             TxtTelefono.Location = new Point(90, 97);
-            TxtTelefono.Margin = new Padding(2, 2, 2, 2);
+            TxtTelefono.Margin = new Padding(2);
             TxtTelefono.MaxLength = 100;
             TxtTelefono.Name = "TxtTelefono";
             TxtTelefono.Size = new Size(121, 27);
@@ -111,7 +111,7 @@
             BtnNuevo.Image = (Image)resources.GetObject("BtnNuevo.Image");
             BtnNuevo.ImageAlign = ContentAlignment.TopCenter;
             BtnNuevo.Location = new Point(24, 152);
-            BtnNuevo.Margin = new Padding(2, 2, 2, 2);
+            BtnNuevo.Margin = new Padding(2);
             BtnNuevo.Name = "BtnNuevo";
             BtnNuevo.Size = new Size(90, 70);
             BtnNuevo.TabIndex = 7;
@@ -126,7 +126,7 @@
             BtnGuardar.Image = (Image)resources.GetObject("BtnGuardar.Image");
             BtnGuardar.ImageAlign = ContentAlignment.TopCenter;
             BtnGuardar.Location = new Point(121, 152);
-            BtnGuardar.Margin = new Padding(2, 2, 2, 2);
+            BtnGuardar.Margin = new Padding(2);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(90, 70);
             BtnGuardar.TabIndex = 8;
@@ -141,7 +141,7 @@
             BtnCancelar.Image = (Image)resources.GetObject("BtnCancelar.Image");
             BtnCancelar.ImageAlign = ContentAlignment.TopCenter;
             BtnCancelar.Location = new Point(215, 152);
-            BtnCancelar.Margin = new Padding(2, 2, 2, 2);
+            BtnCancelar.Margin = new Padding(2);
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(90, 70);
             BtnCancelar.TabIndex = 9;
@@ -155,7 +155,7 @@
             BtnSalir.Image = (Image)resources.GetObject("BtnSalir.Image");
             BtnSalir.ImageAlign = ContentAlignment.TopCenter;
             BtnSalir.Location = new Point(507, 152);
-            BtnSalir.Margin = new Padding(2, 2, 2, 2);
+            BtnSalir.Margin = new Padding(2);
             BtnSalir.Name = "BtnSalir";
             BtnSalir.Size = new Size(90, 70);
             BtnSalir.TabIndex = 12;
@@ -169,7 +169,7 @@
             BtnEliminar.Image = (Image)resources.GetObject("BtnEliminar.Image");
             BtnEliminar.ImageAlign = ContentAlignment.TopCenter;
             BtnEliminar.Location = new Point(413, 152);
-            BtnEliminar.Margin = new Padding(2, 2, 2, 2);
+            BtnEliminar.Margin = new Padding(2);
             BtnEliminar.Name = "BtnEliminar";
             BtnEliminar.Size = new Size(90, 70);
             BtnEliminar.TabIndex = 11;
@@ -183,13 +183,14 @@
             BtnEditar.Image = (Image)resources.GetObject("BtnEditar.Image");
             BtnEditar.ImageAlign = ContentAlignment.TopCenter;
             BtnEditar.Location = new Point(316, 152);
-            BtnEditar.Margin = new Padding(2, 2, 2, 2);
+            BtnEditar.Margin = new Padding(2);
             BtnEditar.Name = "BtnEditar";
             BtnEditar.Size = new Size(90, 70);
             BtnEditar.TabIndex = 10;
             BtnEditar.Text = "Editar";
             BtnEditar.TextAlign = ContentAlignment.BottomCenter;
             BtnEditar.UseVisualStyleBackColor = true;
+            BtnEditar.Click += BtnEditar_Click;
             // 
             // DgvPersonas
             // 
@@ -197,7 +198,7 @@
             DgvPersonas.AllowUserToDeleteRows = false;
             DgvPersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvPersonas.Location = new Point(24, 241);
-            DgvPersonas.Margin = new Padding(2, 2, 2, 2);
+            DgvPersonas.Margin = new Padding(2);
             DgvPersonas.Name = "DgvPersonas";
             DgvPersonas.ReadOnly = true;
             DgvPersonas.RowHeadersWidth = 62;
@@ -223,7 +224,7 @@
             Controls.Add(label2);
             Controls.Add(TxtID);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestion Personas";

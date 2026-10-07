@@ -91,5 +91,26 @@ namespace AplicaicionPersonasRemotoBD
                 return false;
             }
         }
+        //Funcion Editar.
+        public static bool Func_Editar(long id, string name, string tel)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection cnn = new SqlConnection(cadena);
+                //adpatador necesita una consulta sql y una conexion
+                string consulta = "Update Tbl_Persona Set Nombre='" + name + "', Telefono='" + tel + "' Where ID="+id;
+                SqlDataAdapter adap = new SqlDataAdapter(consulta, cnn);
+                //ejecuto el adaptador para que llene los datos en una tabla
+                adap.Fill(dt);
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                excepcion = e.ToString();
+                return false;
+            }
+        }
     }
 }
